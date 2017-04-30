@@ -12,7 +12,7 @@ class ElasticCollection extends Collection {
      * @param array $response
      * @param $instance
      */
-    public function __construct($response, $instance)
+    public function init($response, $instance)
     {
         $this->response = $response;
         $this->instance = $instance;
