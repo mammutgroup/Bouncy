@@ -56,8 +56,9 @@ trait BouncyTrait {
         $params['body'] = $body;
 
         $response = $instance->getElasticClient()->search($params);
-
-        return new ElasticCollection($response, $instance);
+        $collection = new ElasticCollection();
+        $collection->init($response, $instance);
+        return $collection;
     }
 
     /**
